@@ -1,0 +1,91 @@
+QUESTION A
+#Entering the customer ID, customer name, unit consumed.
+#!/bin/bash
+#reead the user input
+echo "Enter the customer_Id"
+read customer_Id
+echo "The customer id is $customer_Id"
+echo
+echo "customer_name"
+read customer_name
+echo "The customer name is $customer_name"
+echo
+echo "Enter the unit_consumed"
+read unit_consumed
+echo "The unit consumed is $unit_consumed"
+echo
+# using the if...else statement
+if [ $unit_consumed -lt 199 -o $unit_consumed -eq 199];then
+echo "The charges per unit is 120"
+elif [ $unit_consumed -eq 200 -a $unit_consumed -lt 400];then
+echo "The charges per unit is 150"
+elif [ $unit_consumed -eq 400 -a $unit_consumed -lt 600];then
+echo "The charges per unit is 180"
+else
+echo "The charges per unit is 200"
+fi
+#calculating the total bill
+The charges per unit=$u
+total_bill{
+    total_bill=$unit_consumed*$unit
+}
+total_bill
+
+QUESTION B
+include <unistd.h> // Unix standard  
+lseek()
+#include <stdio.h> // standard input/output
+#include <fcntl.h> //File control
+int main () {
+//Variable declaration
+int fd; //file descriptor to represent opened files
+char buffer[80]; // character array used to store the content read from the file.
+char msg[50] = "Hello World"; //A character array containing the message to be written to the file
+fd = open("korir.docx", O_RDWR); //opens a file named "korir.docx" with both read and write access
+printf("fd = %d ", fd); // print the descriptor
+if (fd != -1) { //Checks if the file was opened successfully
+printf("\n korir.docx opened with read write access ");
+write(fd, msg, sizeof(msg)); //Writes the content of the msg array to the file
+lseek(fd,0, SEEK_SET); //Moves the file cursor to the beginning of the file using lseek to prepare for 
+reading.
+read(fd, buffer,sizeof(msg)); //Reads the content of the file into the buffer array.
+printf("\n %s was written to my file \n ", buffer); //Prints the content that was read from the file.
+close(fd); //Closes the file using close().
+}
+return 0; //Indicates a successful execution of the program.
+}
+
+QUESTION C
+#Entering the customer details
+#!/bin/bash
+echo "Enter employee_name"
+read employee_name
+echo "The employee name is $employee_name"
+echo
+echo "Enter hours_worked"
+read hours_worked
+echo "The hours worked is $hours_worked"
+echo
+echo "Enter rate_per_hour"
+read rate_per_hour
+echo "The rate per hour is $rate_per_hour"
+echo
+#calculating the basic salry
+basic_salary{
+    basic_salry=$hours_worked*$rate_per_hour
+}
+basic_salary
+#using if...else statement
+if [ basic_pay -gt 7000];then
+echo "25% of basic pay"
+elif [ basic_pay -eq -o -gt 15000 -a basic_salary -lt 70000 ];then
+echo "15% of basi_salry"
+else
+echo "No tax"
+#calculating the net pay
+15% of basi_salry=$tax
+25% of basi_salry=$tax
+net_pay{
+    net_pay=$basic_pay-$tax
+}
+net_pay
